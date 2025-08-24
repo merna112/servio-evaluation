@@ -1,0 +1,22 @@
+tasks:
+  - name: Setup Environment
+    init: |
+      pip install -r requirements.txt
+      wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo apt-key add -
+      sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+      sudo apt-get update
+      sudo apt-get install -y openjdk-11-jre jenkins
+    command: |
+      sudo service jenkins start
+      echo "Jenkins is starting. Wait ~1-2 minutes, then check port 8080."
+      echo "To get the admin password, run: sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
+
+ports:
+  - port: 8080
+    onOpen: open-browser
+    name: Jenkins
+    description: Jenkins CI/CD Server
+
+vscode:
+  extensions:
+    - redhat.java
