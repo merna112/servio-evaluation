@@ -2,7 +2,7 @@ tasks:
   - name: Setup & Run Jenkins
     init: |
       sudo apt-get update
-      sudo apt-get install -y openjdk-11-jre wget
+      sudo apt-get install -y openjdk-17-jre
       pip install -r requirements.txt
       wget -q https://get.jenkins.io/war-stable/latest/jenkins.war
     command: |
