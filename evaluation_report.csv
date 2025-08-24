@@ -1,0 +1,5 @@
+precision_at_1,total_queries,model,dataset
+1.0,2,syntactic,dummy_registry.jsonl
+1.0,2,sequencial,dummy_registry.jsonl
+1.0,2,parallel,dummy_registry.jsonl
+1.0,2,llm,dummy_registry.jsonl

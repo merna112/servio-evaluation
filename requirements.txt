@@ -1,0 +1,6 @@
+requests
+scikit-learn
+nltk
+groq
+pandas
+tqdm
